@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Lib\SendEmail;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,5 +14,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+   $satus = SendEmail::SendOtp();
+   echo "<pre>";
+   print_r($satus);
+   die();
     return view('welcome');
 });
